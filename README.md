@@ -8,6 +8,7 @@ its own folder, with its own dependencies, tests and README.
 | Project | What it does | Status |
 | --- | --- | --- |
 | [google-translate-scraper](google-translate-scraper/) | Translates text from the command line by scraping Google Translate, with a fallback to Google's JSON endpoint. Supports 249 languages. | Working, tested |
+| [currency-converter](currency-converter/) | Converts an amount between currencies from the command line, using the daily XML rates of the Turkish Central Bank (TCMB) and the European Central Bank. Supports 39 currencies. | Working, tested |
 
 ## Repository layout
 
@@ -16,10 +17,17 @@ Web Scraping/
 ├── .gitignore                  rules for every project
 ├── LICENSE                     AGPL-3.0, covers every project
 ├── README.md                   this file
-└── google-translate-scraper/
+├── google-translate-scraper/
+│   ├── README.md               setup, usage and how it works
+│   ├── translate.py            the tool
+│   ├── languages.py            supported languages
+│   ├── requirements.txt        packages the tool needs
+│   ├── requirements-dev.txt    packages for running the tests
+│   ├── pytest.ini
+│   └── tests/
+└── currency-converter/
     ├── README.md               setup, usage and how it works
-    ├── translate.py            the tool
-    ├── languages.py            supported languages
+    ├── currency_convert.py     the tool
     ├── requirements.txt        packages the tool needs
     ├── requirements-dev.txt    packages for running the tests
     ├── pytest.ini
@@ -95,4 +103,6 @@ run one as a service that other people use over a network, you must publish
 your source code under the same license.
 
 This repository is not affiliated with or endorsed by any of the websites it
-scrapes. "Google Translate" is a trademark of Google LLC.
+scrapes or the data sources it reads, including the Central Bank of the
+Republic of Turkey and the European Central Bank. "Google Translate" is a
+trademark of Google LLC.
